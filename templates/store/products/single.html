@@ -25,7 +25,7 @@
                             <div class="col-6 text-end"><span class="h4 fw-bold">%</span></div>
                         </div>
                     </div>
-                    <div class="col">
+                    <!-- <div class="col">
                         <div class="row p-3">
                             <div class="col-6">
                                 <label for="select">Qty</label>
@@ -42,7 +42,49 @@
                             <div class="col-6 text-end"><button type="button" class="btn btn-secondary btn-sm">Add to
                                     Cart</button></div>
                         </div>
+                    </div> -->
+
+
+
+
+                    <div class="col">
+                        <div class="row p-3">
+                            <div class="col-6">
+                                <label for="select">Qty</label>
+                                <select id="select"></select>
+                            </div>
+                            <div class="col-6 text-end">
+                                <button type="button" class="btn btn-secondary btn-sm">Add to Cart</button>
+                            </div>
+                        </div>
                     </div>
+                    
+                    <script>
+                        // Assuming you have a server-side script (e.g., PHP) to retrieve data
+                        // This example uses dummy data; replace it with your actual data retrieval logic
+                        const fetchDataFromDatabase = () => {
+                            return new Promise((resolve) => {
+                                // Replace the following with your actual data retrieval logic
+                                const dataFromDatabase = [1, 2, 3, 4, 5];
+                                resolve(dataFromDatabase);
+                            });
+                        };
+                    
+                        const selectElement = document.getElementById('select');
+                    
+                        // Fetch data from the database and populate the <select> element
+                        fetchDataFromDatabase().then((data) => {
+                            data.forEach((value) => {
+                                const option = document.createElement('option');
+                                option.value = value;
+                                option.text = value;
+                                selectElement.add(option);
+                            });
+                        });
+                    </script>
+                    
+
+
                 </div>
             </div>
         </div>
